@@ -1,16 +1,11 @@
 'use strict'
 
-import debugProvider from 'debug'
 import React, {Component} from 'react'
 
 import LunchCrewJoinForm from './lunchCrewJoinForm'
 
-const debugKey = 'lunchlotto'
-window.localStorage.debug = debugKey
-const debug = debugProvider(debugKey)
-
-export default (browserHistory) => {
-  return class LunchCrewJoinPage extends Component {
+export default (configuration, debug, browserHistory) => {
+  class LunchCrewJoinPage extends Component {
     constructor (props) {
       super(props)
 
@@ -41,4 +36,6 @@ export default (browserHistory) => {
       )
     }
   }
+
+  return LunchCrewJoinPage
 }

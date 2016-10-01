@@ -1,13 +1,22 @@
 'use strict'
 
+import 'whatwg-fetch'
+
+import debugProvider from 'debug'
 import React from 'react'
 import {render} from 'react-dom'
 import {Router, Route, hashHistory} from 'react-router'
 
+import configuration from './configuration'
 import lunchCrewJoinPageProvider from './pages/lunchCrewJoinPage/lunchCrewJoinPageProvider'
-import LunchCrewRoomPage from './pages/lunchCrewRoomPage/lunchCrewRoomPage'
+import lunchCrewRoomPageProvider from './pages/lunchCrewRoomPage/lunchCrewRoomPageProvider'
 
-const LunchCrewJoinPage = lunchCrewJoinPageProvider(hashHistory)
+const debugKey = 'lunchlotto'
+window.localStorage.debug = debugKey
+const debug = debugProvider(debugKey)
+
+const LunchCrewJoinPage = lunchCrewJoinPageProvider(configuration, debug, hashHistory)
+const LunchCrewRoomPage = lunchCrewRoomPageProvider(configuration, debug, hashHistory)
 
 function App () {
   return (

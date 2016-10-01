@@ -12,9 +12,9 @@ function LunchCrewJoinForm ({onChange, onSubmit, value}) {
   )
 }
 
-LunchCrewJoinForm.PropTypes = {
+LunchCrewJoinForm.propTypes = {
   onSubmit: PropTypes.func,
-  lunchCrewName: PropTypes.string,
+  value: PropTypes.object,
   onChange: PropTypes.func
 }
 
