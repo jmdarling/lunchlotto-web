@@ -3,7 +3,7 @@
 import debugProvider from 'debug'
 import React, {Component} from 'react'
 
-import LunchCrewJoinForm from './components/lunchCrewJoinForm'
+import LunchCrewJoinForm from './lunchCrewJoinForm'
 
 const debugKey = 'lunchlotto'
 window.localStorage.debug = debugKey
