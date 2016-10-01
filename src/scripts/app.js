@@ -3,9 +3,9 @@
 import React from 'react'
 import {render} from 'react-dom'
 
-import LunchCrewCreatePage from './lunchCrewJoinPage.js'
+import LunchCrewJoinPage from './pages/lunchCrewJoinPage/lunchCrewJoinPage'
 
 render(
-    <LunchCrewCreatePage/>,
+    <LunchCrewJoinPage/>,
     document.getElementById('container')
 )
