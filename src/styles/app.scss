@@ -1,13 +1,13 @@
 $fontColorPrimary: #333333;
 $fontSize: 18px;
-$fontStack: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$fontStack: Open Sans,Segoe UI,sans-serif;
 
 *, *:before, *:after {
   box-sizing: border-box;
 }
 
 html {
-  background-color: pink;
+  background: linear-gradient(90deg,#6fa8ef,#0080ff);
   color: $fontColorPrimary;
   font-family: $fontStack;
   font-size: $fontSize;
@@ -16,6 +16,32 @@ html {
 html, body {
   height: 100%;
   margin: 0;
-  padding: 0;
+  padding: 20px;
   width: 100%;
+  color: #fff;
+}
+
+.btn {
+  text-decoration: none;
+  background-color: #fff;
+  color: #888;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 10px;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px 5px;
+}
+
+.btn--big {
+  font-size: 28px;
+  padding: 10px;
+  font-weight: 400;
+}
+
+.btn--green {
+  border-color: #33c45f;
+  color: #fff;
+  background-color: #33c45f;
 }
