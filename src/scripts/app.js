@@ -2,10 +2,20 @@
 
 import React from 'react'
 import {render} from 'react-dom'
+import {Router, Route, hashHistory} from 'react-router'
 
-import LunchCrewJoinPage from './pages/lunchCrewJoinPage/lunchCrewJoinPage'
+import lunchCrewJoinPageProvider from './pages/lunchCrewJoinPage/lunchCrewJoinPageProvider'
+import LunchCrewRoomPage from './pages/lunchCrewRoomPage/lunchCrewRoomPage'
 
-render(
-    <LunchCrewJoinPage/>,
-    document.getElementById('container')
-)
+const LunchCrewJoinPage = lunchCrewJoinPageProvider(hashHistory)
+
+function App () {
+  return (
+    <Router history={hashHistory}>
+      <Route path='/' component={LunchCrewJoinPage}/>
+      <Route path='/crew/:crewName' component={LunchCrewRoomPage}/>
+    </Router>
+  )
+}
+
+render(<App/>, document.getElementById('container'))

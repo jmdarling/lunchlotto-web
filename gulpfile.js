@@ -30,7 +30,7 @@ gulp.task('build-scripts', () => {
   connect.reload()
 })
 
-gulp.task('watch-scripts', () => gulp.watch('./src/**/*', ['build-scripts']))
+gulp.task('watch-scripts', () => gulp.watch('./src/scripts/**/*.js', ['build-scripts']))
 
 gulp.task('build-markup', () => {
   return gulp.src('./src/*.html')
