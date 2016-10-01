@@ -6,6 +6,7 @@ var buffer = require('vinyl-buffer')
 var connect = require('gulp-connect')
 var gulp = require('gulp')
 var open = require('gulp-open')
+var sass = require('gulp-sass')
 var source = require('vinyl-source-stream')
 var sourcemaps = require('gulp-sourcemaps')
 
@@ -38,7 +39,15 @@ gulp.task('build-markup', () => {
     .pipe(connect.reload())
 })
 
-gulp.task('watch-markup', () => gulp.watch('./src/*.html', ['buildMarkup']))
+gulp.task('watch-markup', () => gulp.watch('./src/*.html', ['build-markup']))
+
+gulp.task('build-styles', () => {
+  return gulp.src('./src/styles/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./bin'))
+})
+
+gulp.task('watch-styles', () => gulp.watch('./src/**/*.scss', ['build-styles']))
 
 gulp.task('web-server', () => {
   connect.server({
@@ -53,8 +62,8 @@ gulp.task('open-app', () => {
     .pipe(open({ uri: 'http://localhost:8080' }))
 })
 
-gulp.task('build', ['build-scripts', 'build-markup'])
-gulp.task('watch', ['watch-scripts', 'watch-markup'])
+gulp.task('build', ['build-scripts', 'build-markup', 'build-styles'])
+gulp.task('watch', ['watch-scripts', 'watch-markup', 'watch-styles'])
 gulp.task('serve', ['web-server', 'open-app'])
 
 gulp.task('default', ['build', 'watch', 'serve'])

@@ -1,0 +1,21 @@
+$fontColorPrimary: #333333;
+$fontSize: 18px;
+$fontStack: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: pink;
+  color: $fontColorPrimary;
+  font-family: $fontStack;
+  font-size: $fontSize;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
