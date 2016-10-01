@@ -7,12 +7,45 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <script src="//code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+
         <link rel="stylesheet" href="app.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Bungee+Shade|Shrikhand" rel="stylesheet">
     </head>
     <body>
       <header></header>
+      <h1 class="title unicorn">
+        <span>L</span>
+        <span>u</span>
+        <span>n</span>
+        <span>c</span>
+        <span>h</span>
+        <span>L</span>
+        <span>o</span>
+        <span>t</span>
+        <span>t</span>
+        <span>o</span>
+      </h1>
       <div id="container"></div>
 
       <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript">
+            // add animation-delay properties to span elements
+            var animTime = 6, // time for the animation in seconds
+            hueChange = 3, // the hue change from one span element to the next
+            prefixes = ["", "-webkit-", "-moz-", "-o-"],
+            numPrefixes = prefixes.length;
+
+            $('.unicorn').find('span').each(function (i) {
+            for (var j = 0; j < numPrefixes; j++) {
+                $(this).css(prefixes[j] + 'animation-delay', (animTime * ((i * hueChange) % 360) / 360) - animTime + 's');
+            }
+            });
+
+            // needed to avoid Chrome bug:
+            $('.unicorn').one('mouseover',function(){
+            $(this).addClass('animate');
+            });
+        </script>
     </body>
 </html>
