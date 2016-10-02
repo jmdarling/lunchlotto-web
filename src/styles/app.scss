@@ -1,4 +1,6 @@
-$fontColorPrimary: #333333;
+$borderRadius: 6px;
+$containerWidth: 800px;
+$fontColorPrimary: #FFFFFF;
 $fontSize: 18px;
 $fontStack: Open Sans,Segoe UI,sans-serif;
 
@@ -18,7 +20,86 @@ html, body {
   margin: 0;
   padding: 20px;
   width: 100%;
-  color: #fff;
+  color: $fontColorPrimary;
+}
+
+#lunch-crew-join-form {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  max-width: $containerWidth;
+}
+
+/* Components */
+.crew-name {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.destination-list__list {
+  border: 3px solid #FFFFFF;
+  border-radius: $borderRadius;
+  max-height: 300px;
+  padding: 5px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.title {
+  text-align: center;
+}
+
+.form {
+  width: 100%;
+}
+
+.form__form-wrapper {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form__form-wrapper__input {
+  width: 100%;
+
+  background: none;
+  border: 3px solid #FFFFFF;
+  border-radius: $borderRadius;
+  color: #ffffff;
+  padding: 5px;
+}
+
+.form__form-wrapper__submit {
+  margin-left: -35px;
+  margin-top: -5px;
+  position: absolute;
+
+  background: none;
+  border: none;
+  color: white;
+  font-size: 50px;
+}
+
+.form__form-wrapper__submit:hover {
+  cursor: pointer;
+}
+
+.form__instructions {
+  text-align: center;
+}
+
+.lunch-crew-room {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  max-width: $containerWidth;
+}
+
+.lunch-crew-room__destination-list-wrapper {
+  flex-basis: 50%;
+  min-width: 300px;
 }
 
 .title{
@@ -58,7 +139,8 @@ label {
 }
 
 input[type=text] {
-  margin: 0 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   height: 40px;
   font-size: 28px;
 }

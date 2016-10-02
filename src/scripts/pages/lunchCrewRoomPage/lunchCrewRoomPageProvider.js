@@ -44,9 +44,13 @@ export default (configuration, debug, browserHistory) => {
     render () {
       return (
         <div>
-          <h1>LunchCrewRoom for {this.props.params.crewName}</h1>
-          <DestinationList destinations={this.state.destinations}/>
-          <DestinationAddForm onChange={this.destinationAddFormChange} onSubmit={this.destinationAddFormSubmit} value={this.state.destinationAddForm}/>
+          <h2 className='crew-name'>{this.props.params.crewName}</h2>
+          <div className='lunch-crew-room'>
+            <div className='lunch-crew-room__destination-list-wrapper'>
+              <DestinationList destinations={this.state.destinations}/>
+              <DestinationAddForm onChange={this.destinationAddFormChange} onSubmit={this.destinationAddFormSubmit} value={this.state.destinationAddForm}/>
+            </div>
+          </div>
         </div>
       )
     }
