@@ -27,6 +27,21 @@ export default (configuration, debug, browserHistory, ioClient) => {
 
       ioClient.emit('join room', props.params.crewName)
 
+      ioClient.on('reconnect', attemptsCount => {
+        debug(`Socket reconnected after ${attemptsCount} attempts.`)
+
+        // Clear out the current state as we will get new data from the server.
+        this.setState({
+          destinations: [],
+          selectedDestination: '',
+          destinationAddForm: {
+            destinationName: ''
+          }
+        })
+
+        ioClient.emit('join room', props.params.crewName)
+      })
+
       ioClient.on('destination options', this.updateDestinations)
       ioClient.on('winning option', this.updateWinningOption)
     }
