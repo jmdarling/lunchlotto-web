@@ -52,7 +52,7 @@ gulp.task('watch-styles', () => gulp.watch('./src/**/*.scss', ['build-styles']))
 gulp.task('web-server', () => {
   connect.server({
     devBaseUrl: 'http://localhost',
-    port: 8080,
+    port: process.env.PORT || 8080,
     root: './bin'
   })
 })
@@ -64,6 +64,6 @@ gulp.task('open-app', () => {
 
 gulp.task('build', ['build-scripts', 'build-markup', 'build-styles'])
 gulp.task('watch', ['watch-scripts', 'watch-markup', 'watch-styles'])
-gulp.task('serve', ['web-server', 'open-app'])
+gulp.task('serve', ['web-server'])
 
-gulp.task('default', ['build', 'watch', 'serve'])
+gulp.task('default', ['build', 'watch', 'serve', 'open-app'])
