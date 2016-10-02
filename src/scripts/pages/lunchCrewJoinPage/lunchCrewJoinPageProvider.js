@@ -4,7 +4,7 @@ import React, {Component} from 'react'
 
 import LunchCrewJoinForm from './lunchCrewJoinForm'
 
-export default (configuration, debug, browserHistory) => {
+export default (configuration, debug, browserHistory, ioClient) => {
   class LunchCrewJoinPage extends Component {
     constructor (props) {
       super(props)
