@@ -72,7 +72,7 @@ export default (configuration, debug, browserHistory, ioClient) => {
     }
 
     selectDestination () {
-      ioClient.emit('pull lever')
+      ioClient.emit('pull lever', this.props.params.crewName)
     }
 
     updateDestinations (newDestinations) {
